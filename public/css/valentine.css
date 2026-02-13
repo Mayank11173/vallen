@@ -1,0 +1,135 @@
+.val-hero{
+  padding: 24px 0 10px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap: 14px;
+  flex-wrap:wrap;
+}
+.val-hero h1{
+  margin:0;
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: -.6px;
+}
+.val-hero p{
+  margin: 10px 0 0;
+  color: rgba(255,255,255,.78);
+  line-height:1.55;
+  max-width: 72ch;
+}
+
+.val-layout{
+  margin-top: 14px;
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 14px;
+  align-items:stretch;
+}
+
+.val-card{
+  padding: 18px;
+  position:relative;
+  overflow:hidden;
+}
+.val-card::before{
+  content:"";
+  position:absolute;
+  inset:-60%;
+  background:
+    radial-gradient(560px 240px at 16% 22%, rgba(255,77,109,.40), transparent 60%),
+    radial-gradient(520px 240px at 86% 64%, rgba(157,78,221,.34), transparent 60%),
+    conic-gradient(from 120deg, rgba(255,255,255,.18), transparent 26%, rgba(255,255,255,.10), transparent 55%, rgba(255,255,255,.14));
+  filter: blur(24px);
+  opacity:.60;
+  animation: valGlow 10s ease-in-out infinite;
+}
+@keyframes valGlow{
+  0%,100%{transform: translate3d(0,0,0) rotate(0deg)}
+  50%{transform: translate3d(2.5%, -1.6%, 0) rotate(16deg)}
+}
+.val-card > *{position:relative; z-index:1}
+
+.val-text h2{
+  margin: 0 0 10px;
+  font-size: 22px;
+  letter-spacing: -.3px;
+}
+.val-text p{
+  margin: 0 0 12px;
+  color: rgba(255,255,255,.82);
+  line-height:1.65;
+}
+
+.val-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.86);
+  font-weight: 900;
+  letter-spacing:.2px;
+}
+
+.girl-frame{
+  display:grid;
+  place-items:center;
+  padding: 18px;
+}
+.girl{
+  width: min(460px, 92%);
+  filter: drop-shadow(0 28px 80px rgba(0,0,0,.55));
+  animation: floatGirl 4.6s ease-in-out infinite;
+}
+@keyframes floatGirl{
+  0%,100%{transform: translateY(0)}
+  50%{transform: translateY(-8px)}
+}
+
+.glow-ring{
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,.06), transparent 55%),
+    radial-gradient(circle at 50% 50%, rgba(255,77,109,.35), transparent 62%),
+    radial-gradient(circle at 50% 50%, rgba(157,78,221,.28), transparent 68%);
+  filter: blur(1px);
+  animation: ringPulse 3.2s ease-in-out infinite;
+  position:absolute;
+  z-index:0;
+}
+@keyframes ringPulse{
+  0%,100%{transform: scale(.96); opacity:.65}
+  50%{transform: scale(1.02); opacity:1}
+}
+
+.val-actions{
+  margin-top: 12px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.val-title{
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 950;
+  letter-spacing: -.5px;
+  margin: 0 0 8px;
+  background: linear-gradient(90deg, #fff, rgba(255,117,143,.95), rgba(157,78,221,.90));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color: transparent;
+}
+
+.val-note{
+  color: rgba(255,255,255,.74);
+  line-height:1.55;
+}
+
+@media (max-width: 900px){
+  .val-layout{grid-template-columns: 1fr;}
+}
+

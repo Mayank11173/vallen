@@ -1,0 +1,12 @@
+{
+  "name": "valentine-week-mayank-gunjan",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A fully animated Valentine Week website for Mayank ❤ Gunjan (full-stack Node.js + vanilla HTML/CSS/JS).",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  }
+}
+
